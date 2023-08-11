@@ -1,0 +1,45 @@
+inherits = "base16_transparent" 
+
+"ui.cursor.primary" = { fg = "light-coral-cyan", bg = "med-cyan", modifiers = [ "bold" ] }
+"ui.selection" = { fg = "dark-coral-cyan", bg = "select-cyan-bg", modifiers = [ "italic" ] }
+"ui.cursorline.primary" = { bg = "deep-cyan" }
+"ui.cursor.match" = "dark-coral-cyan"
+
+"ui.linenr" = { fg = "med-cyan", modifiers = [ "dim" ] }
+"ui.linenr.selected" = { fg = "med-cyan", modifiers = [ "bold" ] }
+
+"ui.virtual.whitespace" = { fg = "dark-cyan" }
+"ui.statusline" = { fg = "light-aqua", bg = "darker-cyan" }
+"ui.statusline.inactive" = { fg = "bright-cyan", bg = "darker-cyan", modifiers = [ "dim" ] }
+
+"comment" = { fg = "light-cyan", modifiers = [ "italic" ] }
+"keyword" = "aqua"
+"function" = "cadet-blue"
+"string" = "compatible-teal"
+"variable" = "light-cyan"
+
+"markup.list" = "lighter-cyan"
+"markup.bold" = { fg = "aqua", modifiers = ["bold"] }
+"markup.italic" = { fg = "turquoise", modifiers = ["italic"] }
+"markup.heading" = "cadet-blue"
+"markup.strikethrough" = { fg = "powder-blue", modifiers = ["crossed_out"] }
+"markup.raw.block" = "cadet-blue"
+"markup.link.url" = "sky-blue"
+"markup.link.text" = "dark-coral-cyan"
+"markup.link.label" = "compatible-teal"
+"markup.quote" = "deep-sky-blue"
+
+[palette]
+coral-cyan = "#EAA89B" 
+light-coral-cyan = "#FFD6C1"
+dark-coral-cyan = "#BF7F6E"
+deep-cyan = "#001C20" 
+select-cyan-fg= "#008B8B"
+select-cyan-bg = "#0A1B1E"
+med-cyan = "#095B67"
+darker-cyan= "#071619"
+dark-cyan = "#192C32"
+bright-cyan = "#86B6BB"
+light-cyan = "#B3E5FC"
+compatible-teal = "#00796B"
+aqua = "#00FFFF"
