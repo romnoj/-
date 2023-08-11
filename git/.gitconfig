@@ -16,27 +16,27 @@
 
 [core]
 	autocrlf = false
-    pager = delta
+	pager = delta
 
 [delta]
-    features = decorations
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│ "
-    side-by-side = true
+	features = decorations
+	line-numbers-left-format = ""
+	line-numbers-right-format = "│ "
+	side-by-side = true
 
 [delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
+	commit-decoration-style = blue ol
+	commit-style = raw
+	file-style = omit
+	hunk-header-decoration-style = blue box
+	hunk-header-file-style = red
+	hunk-header-line-number-style = "#067a00"
 
 [delta "interactive"]
-    keep-plus-minus-markers = false
+	keep-plus-minus-markers = false
 
 [diff]
-    colorMoved = default   
+	colorMoved = default   
 	hunk-header-style = file line-number syntax
 	mnemonicprefix = true
 	renames = copies
@@ -52,10 +52,10 @@
 	defaultBranch = main
 
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+	diffFilter = delta --color-only --features=interactive
 
 [merge]
-    conflictstyle = diff3
+	conflictstyle = diff3
 	stat = true
 
 [pull]
