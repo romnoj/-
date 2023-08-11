@@ -1,1 +1,27 @@
-/Users/enth/.config/helix/languages.toml
+[[language]]
+name = "c"
+indent = { tab-width = 8, unit = " " }
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "python"
+indent = { tab-width = 4, unit = "  " }
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = true
+
+[[language]]
+name = "swift"
+language-servers = [ "sourcekit-lsp" ]
+formatter = { command = "swift-format" }
+auto-format = true
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+injection-regex = "^typst$"
+file-types = [ "typ" ]
+comment-token = "//"
+indent = { tab-width = 2, unit = " " } 
+roots = []
+language-servers = [ "typst-lsp" ]

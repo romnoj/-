@@ -1,1 +1,47 @@
-/Users/enth/.config/helix/config.toml
+theme = "icy"
+
+[editor]
+gutters = [ "diff", "spacer", "line-numbers", "spacer", "spacer", "diagnostics", "spacer" ]
+line-number = "relative"
+bufferline = "always"
+cursorline = true
+color-modes = true
+auto-save = true
+true-color = true
+scrolloff = 999
+idle-timeout = 0
+completion-trigger-len = 1
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.statusline]
+left = [ "mode", "spacer", "spinner", "diagnostics" ]
+right = [ "position", "version-control", "file-encoding", "file-type" ]
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 0
+wrap-indicator = ""
+
+[editor.indent-guides]
+render = true
+character = "│" 
+skip-levels = 2
+
+[keys.normal]
+X = "extend_line_above"
+ret = [ "move_line_down", "goto_line_start" ]
+C-j = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
+C-k = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+
+[keys.normal.g]
+k = "jump_forward"
+j = "jump_backward"
+
+[keys.normal.space]
+q = ":quit"
+l = ":toggle lsp.display-inlay-hints"
