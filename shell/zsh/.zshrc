@@ -175,6 +175,29 @@ alias -- -7='cd -7'
 alias -- -8='cd -8'
 alias -- -9='cd -9'
 
+# Swap files or directories.
+function transpose {
+    emulate -LR zsh
+    if (( $# != 2 )); then
+        echo >&2 "usage: transpose <path1> <path2>"
+        return 1
+    fi
+    for arg in $1 $2; do
+        if [[ ! -e $arg && ! -L $arg ]]; then
+            echo >&2 "no such file or directory: $arg"
+            return 1
+        fi
+        if [[ -e $path.tmp || -L $path.tmp ]]; then
+            echo >&2 "already exists: $path.tmp"
+            return 1
+        fi
+    done
+    mv $1 $1.tmp
+    mv $2 $2.tmp
+    mv $1.tmp $2
+    mv $2.tmp $1
+}
+
 # exa (ls replacement).
 if (( $+commands[exa] )); then
     function l {
