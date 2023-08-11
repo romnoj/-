@@ -1,0 +1,73 @@
+[user]
+	email = jonmor@stanford.edu
+	name = jon morales
+
+[github]
+	user = romnoj
+
+[advice]
+	detachedHead = false
+	pushNonFastForward = false
+	statusHints = false
+
+[alias]
+	exec = "!exec "
+	root = rev-list --max-parents=0 HEAD
+
+[core]
+	autocrlf = false
+    pager = delta
+
+[delta]
+    features = decorations
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
+    side-by-side = true
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[diff]
+    colorMoved = default   
+	hunk-header-style = file line-number syntax
+	mnemonicprefix = true
+	renames = copies
+	submodule = log
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[init]
+	defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[merge]
+    conflictstyle = diff3
+	stat = true
+
+[pull]
+	ff = only
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[rebase]
+	autosquash = true
+
+[status]
+	submodulesummary = true
+
