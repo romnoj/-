@@ -22,7 +22,10 @@ auto-format = true
 [[language]]
 name = "swift"
 language-servers = ["sourcekit-lsp"]
-formatter = { command = "swift-format" }
+formatter = { command = "swift-format", args = [
+  "--configuration",
+  "~/.config/swift/format.json",
+] }
 auto-format = true
 
 [[language]]
