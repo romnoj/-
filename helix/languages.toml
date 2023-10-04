@@ -24,7 +24,7 @@ name = "swift"
 language-servers = ["sourcekit-lsp"]
 formatter = { command = "swift-format", args = [
   "--configuration",
-  "~/.config/swift/format.json",
+  "/Users/enth/.config/swift/format.json",
 ] }
 auto-format = true
 

@@ -11,7 +11,7 @@ gutters = [
   "spacer",
 ]
 line-number = "relative"
-bufferline = "always"
+bufferline = "multiple"
 cursorline = true
 color-modes = true
 auto-save = true
@@ -54,7 +54,7 @@ C-k = [
 [keys.normal.g]
 k = "jump_forward"
 j = "jump_backward"
+q = ":reflow"
 
 [keys.normal.space]
-q = ":quit"
 l = ":toggle lsp.display-inlay-hints"

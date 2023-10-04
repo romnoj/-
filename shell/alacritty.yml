@@ -47,22 +47,23 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Berkeley Mono
+    # family: BerkeleyMono Nerd Font Mono
+    family: Berkeley Mono Variable
     style: Regular
 
   bold:
-    family: Berkeley Mono 
+    family: Berkeley Mono Variable
     style: Bold 
 
   italic:
-    family: Berkeley Mono 
+    family: Berkeley Mono Variable
     style: Italic
 
   bold_italic:
-    family: Berkeley Mono 
+    family: Berkeley Mono Variable
     style: Bold Italic
 
-  size: 12
+  size: 11.5
 
   offset:
     x: 1 # Character spacing.

@@ -1,4 +1,4 @@
-## Plugin Manager Setup
+# MARK: - Plugin Manager Setup
 
 if [[ ! -f ~/.local/share/zinit/zinit.git/zinit.zsh ]] \
        && (( $+commands[git] )); then
@@ -23,7 +23,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-rust
 
-## Zinit Configuration
+# MARK: - Zinit Configuration
 
 ennui_zinit=
 
@@ -49,72 +49,72 @@ if [[ -n $ennui_zinit ]]; then
     compinit
 fi
 
-## Core settings
+# MARK: – Core Settings
 
-# Load colors.
+# Load colors
 autoload -U colors && colors
 
-# Allow comments in the interactive shell (start with #).
+# Allow comments in the interactive shell
 setopt interactive_comments
 
-# CTRL-s and CTRL-q don't freeze/unfreeze command output.
+# CTRL-s and CTRL-q don't freeze/unfreeze command output
 unsetopt flow_control
 
-# Makes globs case-insensitive.
+# Makes globs case-insensitive
 unsetopt case_glob
 
-# Makes globbing regexes case-insensitive.
+# Makes globbing regexes case-insensitive
 unsetopt case_match
 
-# Allow globs to match dotfiles.
+# Allow globs to match dotfiles
 setopt glob_dots
 
-# Sort filenames numerically.
+# Sort filenames numerically
 setopt numeric_glob_sort
 
-# Disable history expansion.
+# Disable history expansion
 setopt no_bang_hist
 
-# (Almost) never discard history within a session.
+# (Almost) never discard history within a session
 HISTSIZE=1000000
 
-# Save history to disk.
+# Save history to disk
 HISTFILE=~/.zsh_history
 
-# Never discard history.
+# Never discard history
 SAVEHIST=1000000
 
-# Don't save commands that start with a leading space.
+# Don't save commands that start with a leading space
 setopt hist_ignore_space
 
-# All zsh sessions share the same history file.
+# All zsh sessions share the same history file
 setopt share_history
 
-# Might improve performance and prevent corruption.
+# Might improve performance and prevent corruption
 setopt hist_fcntl_lock
 
-# Remove whitespace when saving commands to history.
+# Remove whitespace when saving commands to history
 setopt hist_reduce_blanks
 
-# Avoid immediate execution on history expansion.
+# Avoid immediate execution on history expansion
 setopt hist_verify
 
-# Deduplicate history entries.
+# Deduplicate history entries
 setopt hist_ignore_all_dups
 
-#  Makes it so old directory is saved in the directory stack.
+#  Makes it so old directory is saved in the directory stack
 setopt autopushd
 
-# Makes it so that "cd -n" gives you the directory you were in.
+# Makes it so that "cd -n" gives you the directory you were in
 setopt pushdminus
 
-# Working directory path is automatically followed.
+# Working directory path is automatically followed
 setopt chaselinks
 
-# Automatically enter a directory.
+# Automatically enter a directory
 setopt autocd
 
-# Type "." to reload the shell.
+# Type "." to reload the shell
 function _accept-line {
     emulate -LR zsh
     if [[ $BUFFER == "." ]]; then
@@ -124,15 +124,15 @@ function _accept-line {
 }
 zle -N accept-line _accept-line
 
-# Use TAB and Shift-TAB for cycling autocompletions.
+# Use TAB and Shift-TAB for cycling autocompletions
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete \
         "$terminfo[kcbt]" reverse-menu-complete
 
-# If only one suggestion, complete it by default.
+# If only one suggestion, complete it by default
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 
-# Bind up and down arrow keys for history sorting.
+# Bind up and down arrow keys for history sorting
 () {
    local -a prefix=( '\e'{\[,O} )
    local -a up=( ${^prefix}A ) down=( ${^prefix}B )
@@ -145,25 +145,28 @@ zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
    done
 }
 
-### Aliases and Utilities
+# MARK: – Aliases and Utilities
 
-# Make directory, including parents if a path is specified.
+# Colorful "cat"
+alias cat='bat'
+
+# Make directory, including parents if a path is specified
 alias md='mkdir -p'
 
-# Make directory and "cd" into it.
+# Make directory and "cd" into it
 function mcd {
     emulate -LR zsh
     mkdir -p $@
     cd ${@[$#]}
 }
 
-# Remove directory.
+# Remove directory
 alias rd='rmdir'
 
-# List the last few directories visited.
+# List the last few directories visited
 alias ds='dirs -v | head -10'
 
-# Use "cd -n" to jump into a directory.
+# Use "cd -n" to jump into a directory
 alias -- -='cd -'
 alias -- -1='cd -1'
 alias -- -2='cd -2'
@@ -175,7 +178,7 @@ alias -- -7='cd -7'
 alias -- -8='cd -8'
 alias -- -9='cd -9'
 
-# Swap files or directories.
+# Swap files or directories
 function transpose {
     emulate -LR zsh
     if (( $# != 2 )); then
@@ -198,7 +201,6 @@ function transpose {
     mv $2.tmp $1
 }
 
-# exa (ls replacement).
 if (( $+commands[exa] )); then
     function l {
         emulate -LR zsh
@@ -240,7 +242,6 @@ else
     fi
 fi
 
-# More precise help command.
 unalias run-help 2>/dev/null || true
 autoload -Uz run-help
 autoload -Uz run-help-git
@@ -253,7 +254,7 @@ autoload -Uz run-help-svn
 
 alias help=run-help
 
-## Git
+# MARK: – Git
 
 if (( $+commands[git] )); then
     alias g=git
@@ -469,3 +470,5 @@ if (( $+commands[git] )); then
     alias gpd='git push --delete'
     alias gpt='git push --tags'
 fi
+
+eval "$(zoxide init zsh)"
