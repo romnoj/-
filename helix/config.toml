@@ -27,7 +27,13 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spacer", "spinner", "diagnostics"]
-right = ["position", "version-control", "file-encoding", "file-type"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "position-percentage",
+  "file-encoding",
+]
 
 [editor.soft-wrap]
 enable = true
@@ -37,8 +43,8 @@ wrap-indicator = ""
 
 [editor.indent-guides]
 render = true
-character = "│"
-skip-levels = 2
+character = "▏"
+skip-levels = 1
 
 [keys.normal]
 X = "extend_line_above"
@@ -52,9 +58,13 @@ C-k = [
 ]
 
 [keys.normal.g]
-k = "jump_forward"
-j = "jump_backward"
+j = "jump_forward"
+k = "jump_backward"
 q = ":reflow"
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
+
+[keys.normal.space.w]
+V = ["vsplit_new", "file_picker"]
+S = ["hsplit_new", "file_picker"]
