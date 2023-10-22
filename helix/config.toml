@@ -1,15 +1,7 @@
 theme = "icy"
 
 [editor]
-gutters = [
-  "diff",
-  "spacer",
-  "line-numbers",
-  "spacer",
-  "spacer",
-  "diagnostics",
-  "spacer",
-]
+gutters = ["diff", "line-numbers", "spacer", "diagnostics", "spacer"]
 line-number = "relative"
 bufferline = "multiple"
 cursorline = true

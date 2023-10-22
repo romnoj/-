@@ -1,7 +1,6 @@
 env:
   TERM: xterm-256color
 
-# Inform emulator of our shell choice.
 shell:
   program: /usr/local/bin/fish
   args:
@@ -47,30 +46,30 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: BerkeleyMono Nerd Font Mono
+    family: Berkeley Mono Variable
     style: Regular
 
   bold:
-    family: BerkeleyMono Nerd Font Mono
+    family: Berkeley Mono Variable
     style: Bold 
 
   italic:
-    family: BerkeleyMono Nerd Font Mono
+    family: Berkeley Mono Variable
     style: Italic
 
   bold_italic:
-    family: BerkeleyMono Nerd Font Mono
+    family: Berkeley Mono Variable
     style: Bold Italic
 
-  size: 11.5
+  size: 12
 
   offset:
-    x: 1 # Character spacing.
-    y: 8 # Line spacing.
+    x: 1 # Character spacing
+    y: 2 # Line spacing
 
   glyph_offset:
-    x: 0
-    y: 4
+    x: 1
+    y: 1
 
 ## Color Settings
 
