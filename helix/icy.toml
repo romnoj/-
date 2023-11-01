@@ -1,18 +1,25 @@
-inherits = "base16_transparent" 
+inherits = "base16_transparent"
 
-"ui.cursor.primary" = { fg = "light-coral-cyan", bg = "med-cyan", modifiers = [ "bold" ] }
-"ui.selection" = { fg = "dark-coral-cyan", bg = "select-cyan-bg", modifiers = [ "italic" ] }
-"ui.cursorline.primary" = { bg = "deep-cyan" }
-"ui.cursor.match" = "dark-coral-cyan"
+"ui.cursor.primary" = { fg = "light-coral-cyan", bg = "med-cyan", modifiers = [
+  "bold",
+] }
 
-"ui.linenr" = { fg = "med-cyan", modifiers = [ "dim" ] }
-"ui.linenr.selected" = { fg = "med-cyan", modifiers = [ "bold" ] }
+"ui.selection" = { fg = "dark-coral-cyan", bg = "darker-cyan", modifiers = [
+  "italic",
+] }
 
-"ui.virtual.whitespace" = { fg = "dark-cyan" }
+"ui.cursorline.primary" = { bg = "darkest-cyan" }
+"ui.cursor.match" = { fg = "light-coral-cyan", modifiers = ["bold"] }
+
+"ui.linenr" = { fg = "med-cyan", modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "med-cyan", modifiers = ["bold"] }
+
 "ui.statusline" = { fg = "light-aqua", bg = "darker-cyan" }
-"ui.statusline.inactive" = { fg = "bright-cyan", bg = "darker-cyan", modifiers = [ "dim" ] }
+"ui.statusline.inactive" = { fg = "bright-cyan", bg = "darker-cyan", modifiers = [
+  "dim",
+] }
 
-"comment" = { fg = "light-cyan", modifiers = [ "italic" ] }
+"comment" = { fg = "light-cyan", modifiers = ["italic"] }
 "keyword" = "aqua"
 "function" = "cadet-blue"
 "string" = "compatible-teal"
@@ -30,16 +37,29 @@ inherits = "base16_transparent"
 "markup.quote" = "deep-sky-blue"
 
 [palette]
-coral-cyan = "#EAA89B" 
+coral-cyan = "#EAA89B"
 light-coral-cyan = "#FFD6C1"
 dark-coral-cyan = "#BF7F6E"
-deep-cyan = "#001C20" 
-select-cyan-fg= "#008B8B"
+deep-cyan = "#001C20"
+select-cyan-fg = "#008B8B"
 select-cyan-bg = "#0A1B1E"
 med-cyan = "#095B67"
-darker-cyan= "#071619"
+darker-cyan = "#071619"
 dark-cyan = "#192C32"
+darkest-cyan = "#040B0D"
 bright-cyan = "#86B6BB"
 light-cyan = "#B3E5FC"
 compatible-teal = "#00796B"
 aqua = "#00FFFF"
+
+# Alternatives
+compatible-blue = "#1976D2"
+lighter-cyan = "#88D8D8"
+turquoise = "#30D5C8"
+sky-blue = "#87CEEB"
+cadet-blue = "#5F9EA0"
+powder-blue = "#B0E0E6"
+light-aqua = "#AAFFFF"
+deep-sky-blue = "#00BFFF"
+darker-aqua = "#00CCCC"
+steel-blue = "#4682B4"
