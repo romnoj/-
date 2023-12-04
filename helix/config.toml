@@ -1,4 +1,4 @@
-theme = "icy"
+theme = "gruvbox_dark_hard"
 
 [editor]
 gutters = ["diff", "line-numbers", "spacer", "diagnostics", "spacer"]
@@ -19,13 +19,7 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spacer", "spinner", "diagnostics"]
-right = [
-  "diagnostics",
-  "selections",
-  "position",
-  "position-percentage",
-  "file-encoding",
-]
+right = ["diagnostics", "selections", "position", "file-encoding"]
 
 [editor.soft-wrap]
 enable = true

@@ -4,9 +4,9 @@ env:
 shell:
   program: /usr/local/bin/fish
   args:
-    - --login
+    - -l
 
-## Window Settings
+live_config_reload: true
 
 window:
   dimensions:
@@ -16,49 +16,33 @@ window:
     x: 965
     y: 390
   padding:
-    x: 20
-    y: 20
+    x: 15
+    y: 15
   decorations: buttonless
-  dynamic_title: true
   dynamic_padding: true
-  startup_mode: Windowed
+  opacity: 0.98
   option_as_alt: OnlyLeft
+  startup_mode: Windowed
 
 scrolling:
   history: 100000
-  multiplier: 3
-
-mouse:
-  hide_when_typing: true
-
-cursor:
-  style: 
-    shape: Block
-    blinking: Always
-  blink_interval: 500
-  unfocused_hollow: true
-  thickness: 0.15
-
-live_config_reload: true
-draw_bold_text_with_bright_colors: true
-
-## Font Settings
+  multiplier: 2
 
 font:
   normal:
-    family: Berkeley Mono Variable
+    family: BerkeleyMono Nerd Font Mono
     style: Regular
 
   bold:
-    family: Berkeley Mono Variable
+    family: BerkeleyMono Nerd Font Mono
     style: Bold 
 
   italic:
-    family: Berkeley Mono Variable
+    family: BerkeleyMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Berkeley Mono Variable
+    family: BerkeleyMono Nerd Font Mono
     style: Bold Italic
 
   size: 12
@@ -67,50 +51,47 @@ font:
     x: 1 # Character spacing
     y: 2 # Line spacing
 
-  glyph_offset:
-    x: 1
-    y: 1
-
-## Color Settings
+  builtin_box_drawing: true
 
 colors:
   primary:
-    background: '0x021012'
-    foreground: '0x095b67'
-
-  cursor:
-    text: CellBackground
-    cursor: CellForeground
+    foreground: '0xebdbb2'
+    background: '0x1d2021'
 
   normal:
-    black:   '0x021012'
-    red:     '0x16c1d9'
-    green:   '0x4dd0e1'
-    yellow:  '0x80deea'
-    blue:    '0x00bcd4'
-    magenta: '0x00acc1'
-    cyan:    '0x26c6da'
-    white:   '0x095b67'
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
   bright:
-    black:   '0x052e34'
-    red:     '0x16c1d9'
-    green:   '0x4dd0e1'
-    yellow:  '0x80deea'
-    blue:    '0x00bcd4'
-    magenta: '0x00acc1'
-    cyan:    '0x26c6da'
-    white:   '0x109cb0'
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
 
-  indexed_colors:
-    - { index: 16, color: '0xb3ebf2' }
-    - { index: 17, color: '0x0097a7' }
-    - { index: 18, color: '0x031619' }
-    - { index: 19, color: '0x041f23' }
-    - { index: 20, color: '0x064048' }
-    - { index: 21, color: '0x0c7c8c' }
+  transparent_background_colors: true
+  draw_bold_text_with_bright_colors: true
 
 selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>t"
   save_to_clipboard: true
 
+cursor:
+  style: 
+    shape: Block
+    blinking: Always
+  blink_interval: 600
+  unfocused_hollow: true
+  thickness: 0.10
+
+mouse:
+  hide_when_typing: true
