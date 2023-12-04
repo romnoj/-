@@ -1,5 +1,5 @@
 # -
-Minimalist dotfile setup because I'd rather not use [`nix`][nix].
+Minimalist dotfile setup because I'm too lazy to use [`nix`][nix].
 
 ## dependencies
 Excluding `zsh` and `git`:

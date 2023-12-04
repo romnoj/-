@@ -1,40 +1,58 @@
 theme = "gruvbox_dark_hard"
 
 [editor]
-gutters = ["diff", "line-numbers", "spacer", "diagnostics", "spacer"]
-line-number = "relative"
-bufferline = "multiple"
-cursorline = true
-color-modes = true
 auto-save = true
-true-color = true
-scrolloff = 999
-idle-timeout = 0
+bufferline = "multiple"
+color-modes = true
 completion-trigger-len = 1
+cursorline = true
+gutters = ["diff", "spacer", "line-numbers", "spacer", "diagnostics", "spacer"]
+idle-timeout = 0
+line-number = "relative"
+scrolloff = 999
+true-color = true
+undercurl = true
 
 [editor.cursor-shape]
-normal = "block"
 insert = "bar"
+normal = "block"
 select = "underline"
 
+[editor.indent-guides]
+character = "┊"
+render = true
+skip-levels = 1
+
+[editor.file-picker]
+hidden = false
+max-depth = 4
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
 [editor.statusline]
-left = ["mode", "spacer", "spinner", "diagnostics"]
-right = ["diagnostics", "selections", "position", "file-encoding"]
+left = ["mode", "file-name"]
+right = [
+  "diagnostics",
+  "file-encoding",
+  "file-type",
+  "position",
+  "selections",
+  "spacer",
+  "version-control",
+]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.soft-wrap]
 enable = true
-max-wrap = 25
 max-indent-retain = 0
-wrap-indicator = ""
-
-[editor.indent-guides]
-render = true
-character = "▏"
-skip-levels = 1
+max-wrap = 25
 
 [keys.normal]
-X = "extend_line_above"
-ret = ["move_line_down", "goto_line_start"]
+a = ["append_mode", "collapse_selection"]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = [
   "extend_to_line_bounds",
@@ -42,6 +60,16 @@ C-k = [
   "move_line_up",
   "paste_before",
 ]
+G = "goto_file_end"
+i = ["insert_mode", "collapse_selection"]
+ret = ["move_line_down", "goto_line_start"]
+V = ["extend_line_below", "select_mode"]
+X = "extend_line_above"
+
+[keys.select]
+C-h = ":toggle lsp.display-inlay-hints"
+x = "extend_line"
+";" = ["collapse_selection", "normal_mode"]
 
 [keys.normal.g]
 j = "jump_forward"
@@ -49,8 +77,10 @@ k = "jump_backward"
 q = ":reflow"
 
 [keys.normal.space]
-l = ":toggle lsp.display-inlay-hints"
+f = "file_picker_in_current_directory"
+F = "file_picker"
+G = ":sh gh browse"
 
 [keys.normal.space.w]
-V = ["vsplit_new", "file_picker"]
 S = ["hsplit_new", "file_picker"]
+V = ["vsplit_new", "file_picker"]
