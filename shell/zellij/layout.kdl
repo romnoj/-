@@ -79,9 +79,11 @@ layout {
                 format_right "{datetime}"
                 format_space ""
                
-                mode_normal       "󰘧"
-                mode_locked       "∂"
-                mode_pane         "󰑝"
+                mode_normal         "#[fg=#458588]󰘧"
+                mode_locked         "#[fg=#CC241D]󰽬"
+                mode_pane           "#[fg=#D79921]󰽺"
+                mode_tab            "#[fg=#98971A]󰽸"
+                mode_scroll         "#[fg=#B16286]󰽪"
                 
                 tab_normal        "{index}:{name}  "
                 tab_active        "#[fg=10,bold]{index}:{name}@ "
