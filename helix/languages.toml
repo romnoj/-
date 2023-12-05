@@ -11,21 +11,22 @@ formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
 [[language]]
-name = "toml"
-formatter = { command = "taplo", args = ["fmt", "-"] }
-auto-format = true
-
-[[language]]
-name = "typescript"
-auto-format = true
-
-[[language]]
 name = "swift"
 language-servers = ["sourcekit-lsp"]
 formatter = { command = "swift-format", args = [
   "--configuration",
   "/Users/enth/.config/swift/format.json",
 ] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
 auto-format = true
 
 [[language]]

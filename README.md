@@ -1,11 +1,13 @@
 # -
+
 Minimalist dotfile setup because I'm too lazy to use [`nix`][nix].
 
 ## dependencies
 Excluding `zsh` and `git`:
-* [`alacritty`][alacritty] for terminal emulation
-* [`helix`][helix] for text editing
-* [`delta`][delta] syntax highlighting pager for git, diff, and grep
+
+- [`alacritty`][alacritty] for terminal emulation
+- [`helix`][helix] for text editing
+- [`delta`][delta] syntax highlighting pager for git, diff, and grep
 
 [nix]: https://nixos.org/
 [alacritty]: https://github.com/alacritty/alacritty

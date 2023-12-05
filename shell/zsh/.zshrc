@@ -148,7 +148,7 @@ zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 # MARK: – Aliases and Utilities
 
 # Colorful "cat"
-alias cat='bat'
+alias cat='bat --theme=gruvbox-dark'
 
 # Make directory, including parents if a path is specified
 alias md='mkdir -p'
@@ -178,7 +178,34 @@ alias -- -7='cd -7'
 alias -- -8='cd -8'
 alias -- -9='cd -9'
 
-# Swap files or directories
+# Usage: copy <path1> ... <path9>
+function copy {
+    emulate -LR zsh
+    ENNUI_CLIPBOARD=()
+    for target; do
+        ENNUI_CLIPBOARD+=(${target:a})
+    done
+}
+
+# Usage: move [<path>]
+function move {
+    emulate -LR zsh
+    mv $ENNUI_CLIPBOARD ${1:-.}
+}
+
+# Usage: paste [<path>]
+function paste {
+    emulate -LR zsh
+    cp -R $ENNUI_CLIPBOARD ${1:-.}
+}
+
+# Usage: pasteln [<path>]
+function pasteln {
+    emulate -LR zsh
+    ln -s $ENNUI_CLIPBOARD ${1:-.}
+}
+
+# Usage: transpose <path1> <path2>
 function transpose {
     emulate -LR zsh
     if (( $# != 2 )); then
@@ -201,10 +228,37 @@ function transpose {
     mv $2.tmp $1
 }
 
-if (( $+commands[exa] )); then
+# Usage: delink <path>
+function delink {
+    emulate -LR zsh
+    if [[ -z $1 ]]; then
+        echo >&2 "usage: delink <symlinks>"
+        return 1
+    fi
+    for link; do
+        if [[ -L $link ]]; then
+            if [[ -e $link ]]; then
+                target=${link:A}
+                if rm $link; then
+                    if cp -R $target $link; then
+                        echo >&2 "Copied $target to $link"
+                    else
+                        ln -s $target $link
+                    fi
+                fi
+            else
+                echo >&2 "Broken symlink: $link"
+            fi
+        else
+            echo >&2 "Not a symlink: $link"
+        fi
+    done
+}
+
+if (( $+commands[eza] )); then
     function l {
         emulate -LR zsh
-        exa --all --header --long --color-scale $@
+        eza --all --header --long --color-scale $@
     }
 
     function lg {
