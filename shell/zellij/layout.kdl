@@ -84,6 +84,7 @@ layout {
                 mode_pane           "#[fg=#D79921]󰽺"
                 mode_tab            "#[fg=#98971A]󰽸"
                 mode_scroll         "#[fg=#B16286]󰽪"
+                mode_session         "#[fg=#689D6A]󰽭"
                 
                 tab_normal        "{index}:{name}  "
                 tab_active        "#[fg=10,bold]{index}:{name}@ "
