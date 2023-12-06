@@ -24,6 +24,14 @@ name = "markdown"
 formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
 auto-format = true
 
+[language-server]
+deno = { command = "deno", args = ["lsp"] }
+
+[[language]]
+name = "tsx"
+language-servers = ["deno", "emmet-ls"]
+auto-format = true
+
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
