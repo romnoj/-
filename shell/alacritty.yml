@@ -49,7 +49,7 @@ font:
 
   offset:
     x: 1 # Character spacing
-    y: 2 # Line spacing
+    y: 3 # Line spacing
 
   builtin_box_drawing: true
 
