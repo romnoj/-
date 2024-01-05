@@ -55,28 +55,74 @@ font:
 
 colors:
   primary:
-    foreground: '0xebdbb2'
-    background: '0x1d2021'
+      background: "#1c1917"
+      foreground: "#d6d0cd"
+      dim_foreground: "#d6d0cd"
+      bright_foreground: "#d6d0cd"
+
+  cursor:
+      text: "#1c1917"
+      cursor: "#d6d0cd"
+  vi_mode_cursor:
+      text: "#1c1917"
+      cursor: "#d6d0cd"
+
+  search:
+      matches:
+          foreground: "#1c1917"
+          background: "#24201e"
+      focused_match:
+          foreground: "#1c1917"
+          background: "#2a2522"
+      footer_bar:
+          foreground: "#1c1917"
+          background: "#b8aea8"
+
+  hints:
+      start:
+          foreground: "#1c1917"
+          background: "#c4b392"
+      end:
+          foreground: "#1c1917"
+          background: "#24201e"
+
+  selection:
+      text: "#d6d0cd"
+      background: "#2a2522"
 
   normal:
-    black:   '0x282828'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d6a'
-    white:   '0xa89984'
+      black: "#2a2421"
+      red: "#d49191"
+      green: "#b6b696"
+      yellow: "#c4b392"
+      blue: "#9e96b6"
+      magenta: "#b696b1"
+      cyan: "#98acc8"
+      white: "#ddd9d6"
 
   bright:
-    black:   '0x928374'
-    red:     '0xfb4934'
-    green:   '0xb8bb26'
-    yellow:  '0xfabd2f'
-    blue:    '0x83a598'
-    magenta: '0xd3869b'
-    cyan:    '0x8ec07c'
-    white:   '0xebdbb2'
+      black: "#2e2622"
+      red: "#d89393"
+      green: "#b9b99b"
+      yellow: "#c8b692"
+      blue: "#a299b9"
+      magenta: "#b997b4"
+      cyan: "#9bb0ca"
+      white: "#e1dbd9"
+
+  dim:
+      black: "#2a2421"
+      red: "#d18989"
+      green: "#727246"
+      yellow: "#c1b090"
+      blue: "#9b92b3"
+      magenta: "#b393ad"
+      cyan: "#95a9c5"
+      white: "#e3d5ce"
+
+  indexed_colors:
+      - { index: 16, color: "#c4b392" }
+      - { index: 17, color: "#ddd9d6" }
 
   transparent_background_colors: true
   draw_bold_text_with_bright_colors: true
