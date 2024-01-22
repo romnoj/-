@@ -20,7 +20,7 @@ window:
     y: 15
   decorations: buttonless
   dynamic_padding: true
-  opacity: 0.93
+  opacity: 0.97
   option_as_alt: OnlyLeft
   startup_mode: Windowed
 

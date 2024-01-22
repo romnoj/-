@@ -1,4 +1,4 @@
-theme = "meliora"
+theme = "meliorasayer"
 
 [editor]
 auto-save = true
@@ -6,15 +6,7 @@ bufferline = "multiple"
 color-modes = true
 completion-trigger-len = 1
 cursorline = true
-gutters = [
-  # "spacer",
-  "diff",
-  "spacer",
-  "line-numbers",
-  "spacer",
-  "diagnostics",
-  "spacer",
-]
+gutters = ["diff", "spacer", "line-numbers", "spacer", "diagnostics", "spacer"]
 idle-timeout = 0
 line-number = "relative"
 scrolloff = 999
